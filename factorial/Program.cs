@@ -8,19 +8,35 @@ namespace factorial
 {
     class Program
     {
+        static double Factorial(int f, int n)
+        {
+            //do
+            //{
+            //    f *= n--;
+            //}
+            //while (n > 0);
+
+            //return f;
+
+            if (n == 1)
+                return 1;
+            else
+            {
+                for(int i = n; i > 0; i--)
+                {
+                    f *= i;
+                }
+                return f;
+            }   
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Введите количество клиентов: ");
-            int n = Convert.ToInt32(Console.ReadLine());
+            int quantity = Convert.ToInt32(Console.ReadLine());
             int factorial = 1;
 
-            do
-            {
-                factorial *= n--;
-            }
-            while (n > 0);
-
-            Console.WriteLine("Всего вариантов доставки: {0}", factorial);
+            Console.WriteLine("Всего вариантов доставки: {0}", Factorial(factorial, quantity));
 
             Console.ReadKey();
                 
